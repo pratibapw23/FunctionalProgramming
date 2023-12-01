@@ -9,14 +9,14 @@ public class PringAllNumbersInList {
 		printAllNumbers(List.of(10,5,4,3,19,20));
 	}
 	
-	public static void print(int n) {
-		System.out.println(n);
-	}
+//	public static void print(int n) {
+//		System.out.println(n);
+//	}
 
 	private static void printAllNumbers(List<Integer> nums) {
 
 		nums.stream()
-			.forEach(PringAllNumbersInList::print);
+			.forEach(System.out::println);
 	}
 
 }
