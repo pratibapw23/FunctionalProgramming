@@ -7,7 +7,8 @@ public class PringAllNumbersInList {
 	public static void main(String[] args) {
 		
 //		printAllNumbers(List.of(10,5,4,3,19,20));
-		printEvenNumbers(List.of(10,5,4,3,19,20,11));
+//		printEvenNumbers(List.of(10,5,4,3,19,20,11));
+		printNumbersGreaterThanK(List.of(10,5,4,3,19,20,11),10);
 	}
 	
 //	public static void print(int n) {
@@ -22,6 +23,11 @@ public class PringAllNumbersInList {
 	private static void printEvenNumbers(List<Integer> nums) {
 		nums.stream()
 			.filter(number -> number%2==0)
+			.forEach(System.out::println);
+	}
+	private static void printNumbersGreaterThanK(List<Integer> nums, int k) {
+		nums.stream()	
+			.filter(number -> number>=k)
 			.forEach(System.out::println);
 	}
 
