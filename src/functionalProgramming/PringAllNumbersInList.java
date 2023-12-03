@@ -8,7 +8,9 @@ public class PringAllNumbersInList {
 		
 //		printAllNumbers(List.of(10,5,4,3,19,20));
 //		printEvenNumbers(List.of(10,5,4,3,19,20,11));
-		printNumbersGreaterThanK(List.of(10,5,4,3,19,20,11),10);
+//		printNumbersGreaterThanK(List.of(10,5,4,3,19,20,11),10);
+//		printSquaresOfEachNumber(List.of(10,5,4,3,19,20,11));
+		printSquaresOfEventNumbers(List.of(10,5,4,3,19,20,11));
 	}
 	
 //	public static void print(int n) {
@@ -29,6 +31,17 @@ public class PringAllNumbersInList {
 		nums.stream()	
 			.filter(number -> number>=k)
 			.forEach(System.out::println);
+	}
+	private static void printSquaresOfEachNumber(List<Integer> nums) {
+		nums.stream()
+		.map(num -> num*num)
+		.forEach(System.out::println);
+	}
+	private static void printSquaresOfEventNumbers(List<Integer> nums) {
+		nums.stream()
+		.filter(num -> num%2==0)
+		.map(num -> num*num)
+		.forEach(System.out::println);
 	}
 
 }
