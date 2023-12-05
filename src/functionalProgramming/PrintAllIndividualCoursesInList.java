@@ -1,5 +1,6 @@
 package functionalProgramming;
 
+import java.util.Comparator;
 import java.util.List;
 
 public class PrintAllIndividualCoursesInList {
@@ -9,7 +10,9 @@ public class PrintAllIndividualCoursesInList {
 		List<String> courses=List.of("Spring","Spring Boot", "API", "Microservices","AWS","APID");
 //		individualCourses(courses);
 //		printWordContainingFourCharacters(courses);
-		printLengthOfEachCharacter(courses);
+//		printLengthOfEachCharacter(courses);
+		sortStringsByItsLength(courses);
+		
 
 	}
 
@@ -28,6 +31,11 @@ public class PrintAllIndividualCoursesInList {
 		courses.stream()
 		.map(course -> course + " "+ course.length())
 		.forEach(System.out::println);
+	}
+	private static void sortStringsByItsLength(List<String> courses) {
+				courses.stream()
+					.sorted(Comparator.comparing(str -> (str.length())))
+					.forEach(System.out::println);
 	}
 
 }
