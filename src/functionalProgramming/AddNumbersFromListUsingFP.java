@@ -14,6 +14,7 @@ public class AddNumbersFromListUsingFP {
 		System.out.println(minValueFromList(List.of(1,2,3,5,3,4,4)));
 		System.out.println(sumOfSquares(List.of(2,3,4)));
 		System.out.println(sumOfOddNumbers(List.of(2,3,4,5)));
+		distinctAndSortedElements(List.of(2,3,4,5,2,3,4,5));
 
 
 	}
@@ -51,6 +52,10 @@ public class AddNumbersFromListUsingFP {
 				numbers.stream()
 					.filter(number -> number%2!=0)
 					.reduce(0, (x,y) -> x+y);
+	}
+	private static void distinctAndSortedElements(List<Integer> numbers) {
+		numbers.stream()
+			.distinct().sorted().forEach(System.out::println);
 	}
 
 }
