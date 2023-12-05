@@ -2,6 +2,7 @@ package functionalProgramming;
 
 import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class PrintAllIndividualCoursesInList {
 
@@ -11,7 +12,8 @@ public class PrintAllIndividualCoursesInList {
 //		individualCourses(courses);
 //		printWordContainingFourCharacters(courses);
 //		printLengthOfEachCharacter(courses);
-		sortStringsByItsLength(courses);
+//		sortStringsByItsLength(courses);
+		System.out.println(lengthsOfCourses(courses));
 		
 
 	}
@@ -36,6 +38,12 @@ public class PrintAllIndividualCoursesInList {
 				courses.stream()
 					.sorted(Comparator.comparing(str -> (str.length())))
 					.forEach(System.out::println);
+	}
+	private static List<Integer> lengthsOfCourses(List<String> courses){
+		return
+				courses.stream()
+					.map(course -> course.length())
+					.collect(Collectors.toList());
 	}
 
 }
